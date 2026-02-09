@@ -2,6 +2,7 @@ import { render } from "svelte/server";
 import { expect, test } from "vitest";
 import { m } from "../paraglide/messages.js";
 import MessageCTATest from "./MessageCTATest.svelte";
+import MessageCTAWithComponentTest from "./MessageCTAWithComponentTest.svelte";
 import MessageNestedCTATest from "./MessageNestedCTATest.svelte";
 import Message from "./Message.svelte";
 
@@ -26,6 +27,14 @@ test("renders compiled markup and exposes options/attributes as records", () => 
 
 	expect(normalizeSsrBody(body)).toBe(
 		'<a href="/docs" data-track="true">Read docs</a>'
+	);
+});
+
+test("renders svelte component in markup", () => {
+	const { body } = render(MessageCTAWithComponentTest, {});
+
+	expect(normalizeSsrBody(body)).toBe(
+		'<a href="/docs" data-track="true">🔗 Read docs</a>'
 	);
 });
 

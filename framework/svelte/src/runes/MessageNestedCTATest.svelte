@@ -4,7 +4,6 @@
 </script>
 
 <Message message={m.nested_cta} inputs={{}}>
-    <!-- TODO(FIXME): WTF?? -->
     {#snippet link({ children, options })}
         <a href={options.to}>
             {@render children?.()}
