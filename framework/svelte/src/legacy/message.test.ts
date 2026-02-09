@@ -1,6 +1,6 @@
 import { render } from "svelte/server";
 import { expect, test } from "vitest";
-import { m } from "./paraglide/messages.js";
+import { m } from "../paraglide/messages.js";
 import Message from "./Message.svelte";
 import { renderMessage } from "./message.js";
 
